@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+}
+
+section{
+    display: flex;
+    border: 1px solid black;
+    height: 85vh;
+    width: 100vw;
+    justify-content: space-around;
+}
