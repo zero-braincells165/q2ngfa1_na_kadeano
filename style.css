@@ -1,69 +1,160 @@
-*{margin: 0;}
-body{
-    display: flex;
-    flex-direction: column;
-    justify-items: space-between;
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Serif+Display:ital,wght@0,100;0,300;1,100&family=Noto+Serif:wght@800&family=Roboto+Mono:ital,wght@1,300&family=Titillium+Web&display=swap');
+
+/* Resetting default margin and including padding and border in element's total width and height */
+* {
+    margin: 0;
+    box-sizing: border-box;
 }
-a{text-decoration: none; color: black;}
-.links a{margin-left: 1vw;}
-nav{
+
+/* Body styling */
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #1F1C2C; /* Dark mysterious background color */
+    color: #B2B2B2; /* Light gray text color */
+}
+
+/* Links styling */
+a {
+    text-decoration: none;
+    color: #E6ECFD; /* Light blue link color */
+    font-size: 1.5vw;
+}
+
+/* Navigation styling */
+nav {
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    background-color: hsl(117, 62%, 85%);
-    padding-top: 1vw;
-    padding-bottom: 1vh;
+    padding-bottom: 1.5vw; /* Decreased padding for a cleaner look */
+    padding-top: 1.5vw; /* Decreased padding for a cleaner look */
+    background-color: #2A243B; /* Dark purple navigation bar */
 }
-/*base sprite css*/
-.icon{
-    background: url(Media/sprite3.png);
-    background-repeat: no-repeat; width: 66px;
-    height: 66px;
+
+/* Links within navigation styling */
+.links a {
+    margin-left: 1.5vw; /* Decreased margin for a cleaner look */
     display: inline-block;
+    text-align: center;
+    padding: 1vw 1.5vw; /* Increased padding for a cleaner look */
 }
-/* individual sprite poaitions*/
-#soundcloud{background-position: -578px -72px;}
-#fb{background-position: -435px -145px;}
-/*code for site responsiveness*/
-@media screen and (max-width: 600px){
-    .nav{
-        position: relative;
-        background-color: rgb(31, 32, 78);
-    }
-    .pagetitle{
-        background-color: rgb(31, 32, 78);
-        padding: 1vw;
-        color:black;
-        transition: .5s;
-    }
-    .links{
-        display: none;
-        z-index: 1;
-        position: absolute;
-        background-color: blueviolet;
-        min-width: 100px;
-        box-shadow: 0px 8px 16px 0px color(sgrb red green blue);
-        transition: .5s;
-    }
-    .links a{
-        color: black;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-        display: block;
-        transition: .5s;
-        margin-left: 0;
-        padding-left: 1vh;
-    } 
-    .links a:hover{background-color: blanchedalmond; transition: .5s;}
-    nav:hover .links {display: block; transition: .5s;}
-    nav:hover .links .pagetitle{background-color: cadetblue; transition: .5s;}
+
+/* Page title styling */
+.pagetitle {
+    color: #BBCCE2; /* Light blue-gray page title color */
+    font-size: 2.5vw;
 }
-#soundcloud{
-	background: url(Media/SplashingAround/sprite3.png) no-repeat -587px -72px;
-	width: 66px;
-	height: 66px;
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 600px) {
+    .links {
+        min-width: 120px; /* Adjusted min-width for smaller screens */
+        background-color: #331D3F; /* Darker purple background color for links */
+    }
+
+    .links a {
+        color: #FFFFFF; /* White text color for links */
+        padding: 1.5vw 2vw; /* Increased padding for a cleaner look */
+    }
+
+    .links a:hover {
+        background-color: #6D6870; /* Darker purple background color on hover */
+    }
+
+    nav:hover .pagetitle {
+        background-color: #222B38; /* Darker blue-gray background color on hover */
+    }
 }
-#fb{
-	background: url(Media/SplashingAround/sprite3.png) no-repeat -439px -146px;
-	width: 66px;
-	height: 66px;
+
+/* Video styling */
+.vid {
+    width: 100vw;
+    height: 56.25vw; /* 16:9 aspect ratio */
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+/* Background video styling */
+#vidbg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+/* Container styling */
+.container {
+    position: relative;
+}
+
+/* Banner styling */
+.banner {
+    height: 56.25vw; /* 16:9 aspect ratio */
+    background-color: rgba(17, 3, 59, 0.548);
+    z-index: 9;
+}
+
+/* Banner head styling */
+.bannerhead {
+    text-align: left;
+    padding-top: 3vw; /* Adjusted padding for a cleaner look */
+    font-family: 'Merriweather', serif;
+    color: #ABB1FF; /* Light purple banner head color */
+    font-size: 3.5vw; /* Decreased font size for a cleaner look */
+    text-align: center;
+}
+
+/* Article styling */
+article {
+    padding-top: 1vw;
+    color: #AFB5FF; /* Light purple article text color */
+    margin-left: 56.25vw; /* 16:9 aspect ratio */
+    font-size: 1.5vw;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/*Footer styling*/
+footer {
+    background-color: #2A243B;
+    padding: 2vw 0; /* Adjusted padding for a cleaner look */
+    text-align: center;
+}
+
+/* Social media icons styling */
+#yt, #twitter, #fb, #soundcloud {
+    display: inline-block;
+    width: 4vw;
+    height: 4vw;
+    margin: 0 1vw; /* Adjusted margin for a cleaner look */
+}
+
+/* YouTube icon styling */
+#yt {
+    background: url('Icon/sprite3.png') no-repeat -439px -221px;
+}
+
+/* Twitter icon styling */
+#twitter {
+    background: url('Icon/sprite3.png') no-repeat -66px -72px;
+}
+
+/* Facebook icon styling */
+#fb {
+    background: url('Icon/sprite3.png') no-repeat -439px -146px;
+}
+
+/* SoundCloud icon styling */
+#soundcloud {
+    background: url('Icon/sprite3.png') no-repeat -587px -72px;
+}
+
+/* Favicon styling */
+#favicon {
+    background: url('imgs/sprite3.png') no-repeat -290px -146px;
+    width: 4vw;
+    height: 4vw;
 }
